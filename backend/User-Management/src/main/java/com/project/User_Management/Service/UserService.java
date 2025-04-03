@@ -3,7 +3,9 @@ import java.util.List;
 
 import com.project.User_Management.Model.User;
 import com.project.User_Management.Repository.UserRepository;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserService {
     private UserRepository repo;
      public List<User> getAllUsers(){

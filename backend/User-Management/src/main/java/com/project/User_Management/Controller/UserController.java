@@ -3,6 +3,7 @@ package com.project.User_Management.Controller;
 import com.project.User_Management.Model.User;
 import com.project.User_Management.Service.UserService;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +13,13 @@ import java.util.List;
 @RestController
 @RequestMapping("api/users")
 public class UserController {
+    @Autowired
     UserService service;
+
+    @GetMapping("test")
+    public String test(){
+        return "Server is working";
+    }
     @GetMapping
     public List<User> getAllUsers(){
         return service.getAllUsers();
